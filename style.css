@@ -373,6 +373,43 @@ li {
   line-height: 1.7;
 }
 
+.hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 1.8rem 0 2.5rem;
+}
+
+..hero-highlight-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.15rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  min-height: 100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-highlight-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 163, 115, 0.8);
+  box-shadow: 0 14px 30px rgba(212, 163, 115, 0.16), 0 0 16px rgba(212, 163, 115, 0.1);
+}
+
+.hero-highlight-card i {
+  color: var(--primary-gold);
+  font-size: 1.4rem;
+  margin-top: 4px;
+}
+
+.hero-highlight-card p {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .hero-cta-buttons {
   display: flex;
   gap: 1.5rem;
@@ -841,6 +878,95 @@ li {
 
 .skill-category.tech .skill-bar-fill {
   background: linear-gradient(90deg, var(--accent-teal), #00cec9);
+}
+
+.value-props {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, rgba(12, 14, 16, 0.95), rgba(6, 7, 8, 1));
+}
+
+.value-props-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 163, 115, 0.75);
+  box-shadow: 0 16px 35px rgba(212, 163, 115, 0.18), 0 0 18px rgba(212, 163, 115, 0.12);
+}
+
+.value-props-grid .value-card:nth-child(3):hover {
+  border-color: rgba(212, 163, 115, 0.95);
+  box-shadow: 0 20px 50px rgba(212, 163, 115, 0.28), 0 0 24px rgba(212, 163, 115, 0.25);
+}
+
+.value-card i {
+  color: var(--primary-gold);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.value-card p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.testimonials {
+  padding: 8rem 0;
+  background: var(--bg-deep);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  padding: 2rem;
+  position: relative;
+}
+
+.testimonial-card i {
+  color: var(--primary-gold);
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-card p {
+  color: var(--text-muted);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: var(--text-main);
+}
+
+.testimonial-author strong {
+  font-size: 0.95rem;
+}
+
+.testimonial-author span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 /* ==========================================================================
@@ -1634,6 +1760,11 @@ textarea ~ .form-label {
     grid-column: span 2;
   }
   
+  .value-props-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1711,6 +1842,16 @@ textarea ~ .form-label {
   
   .hero-profile-img {
     max-height: 380px;
+  }
+  
+  .value-props-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .hero-shape-bg-large {
