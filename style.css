@@ -1799,11 +1799,83 @@ textarea ~ .form-label {
     gap: 1.5rem;
     text-align: center;
   }
+  
+  .hero-cta-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .hero-cta-buttons .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+  
+  .portfolio-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .about-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
 }
 
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.65rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-name {
+    font-size: 2.4rem;
+  }
+  
+  .hero-title-role {
+    font-size: 1.2rem;
+  }
+  
+  .hero-desc {
+    font-size: 0.98rem;
+  }
+  
+  .hero-cta-buttons {
+    gap: 0.75rem;
+  }
+  
+  .hero-content-right {
+    height: auto;
+  }
+  
+  .hero-profile-img {
+    max-height: 300px;
+  }
+  
+  .portfolio-filters {
+    margin-bottom: 2rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .contact-section {
+    padding: 5rem 0;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
   }
 }
 
