@@ -378,9 +378,10 @@ li {
   grid-template-columns: repeat(3, minmax(180px, 1fr));
   gap: 1rem;
   margin: 1.8rem 0 2.5rem;
+  border-radius: 50px;
 }
 
-..hero-highlight-card {
+.hero-highlight-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
@@ -394,7 +395,7 @@ li {
 
 .hero-highlight-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(212, 163, 115, 0.8);
+  border-color: rgba(212, 155, 98, 0.8);
   box-shadow: 0 14px 30px rgba(212, 163, 115, 0.16), 0 0 16px rgba(212, 163, 115, 0.1);
 }
 
@@ -425,7 +426,7 @@ li {
 .btn-purple:hover {
   background: var(--purple-accent-hover);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(127, 86, 218, 0.4);
+  box-shadow: 0 8px 20px rgba(112, 73, 196, 0.4);
 }
 
 .btn-outline-purple {
