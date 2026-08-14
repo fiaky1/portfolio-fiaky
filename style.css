@@ -1513,6 +1513,13 @@ textarea ~ .form-label {
   border: 1px solid rgba(0, 184, 148, 0.2);
 }
 
+.form-status-msg.error {
+  display: block;
+  background: rgba(231, 111, 81, 0.1);
+  color: var(--accent-orange);
+  border: 1px solid rgba(231, 111, 81, 0.2);
+}
+
 /* ==========================================================================
    FOOTER SECTION
    ========================================================================== */

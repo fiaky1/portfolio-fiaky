@@ -347,24 +347,42 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('btn-submit-form');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
+
+      const formData = new FormData(contactForm);
       submitBtn.textContent = 'Envoi en cours...';
       submitBtn.style.opacity = '0.7';
       submitBtn.disabled = true;
+      formStatus.classList.remove('success', 'error');
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = 'Message envoyé avec succès ! Je reviens vers vous rapidement.';
+          formStatus.classList.add('success');
+          contactForm.reset();
+        } else {
+          formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+          formStatus.classList.add('error');
+        }
+      } catch (err) {
+        formStatus.textContent = 'Erreur réseau. Vérifiez votre connexion puis réessayez.';
+        formStatus.classList.add('error');
+      }
+
+      submitBtn.textContent = 'Envoyer le message';
+      submitBtn.style.opacity = '1';
+      submitBtn.disabled = false;
 
       setTimeout(() => {
-        formStatus.classList.add('success');
-        contactForm.reset();
-        submitBtn.textContent = 'Envoyer le message';
-        submitBtn.style.opacity = '1';
-        submitBtn.disabled = false;
-
-        setTimeout(() => {
-          formStatus.classList.remove('success');
-        }, 5000);
-      }, 1500);
+        formStatus.classList.remove('success', 'error');
+      }, 8000);
     });
   }
 });
