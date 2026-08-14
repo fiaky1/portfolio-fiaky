@@ -53,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================
+     1c. FOOTER YEAR AUTO-UPDATE
+      ========================================== */
+  const footerYear = document.getElementById('footer-year');
+  if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+  }
+
+  /* ==========================================
      2. NAVBAR SCROLL EFFECT
       ========================================== */
   const navbar = document.getElementById('navbar');

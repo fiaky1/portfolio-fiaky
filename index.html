@@ -10,6 +10,10 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Preload the hero portrait for faster first paint -->
+  <link rel="preload" as="image" href="assets/profile.png">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
@@ -103,11 +107,11 @@
        ========================================== -->
   <section class="hero" id="home">
     <div class="hero-particles">
-      <span class="particle p1" data-speed="0.2"></span>
-      <span class="particle p2" data-speed="-0.3"></span>
-      <span class="particle p3" data-speed="0.4"></span>
-      <span class="particle p4" data-speed="-0.15"></span>
-      <span class="particle p5" data-speed="0.25"></span>
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+      <span class="particle p5"></span>
     </div>
     <div class="container hero-grid-container">
       <div class="hero-content-left reveal-left">
@@ -141,9 +145,11 @@
       </div>
 
       <div class="hero-content-right reveal-right">
-        <div class="hero-shape-bg-large" data-speed="0.1"></div>
-        <div class="hero-shape-bg-small-green" data-speed="-0.2"></div>
-        <div class="hero-shape-bg-small-yellow" data-speed="0.15"></div>
+        <div class="hero-shapes-layer" data-speed="0.08">
+          <div class="hero-shape-bg-large"></div>
+          <div class="hero-shape-bg-small-green"></div>
+          <div class="hero-shape-bg-small-yellow"></div>
+        </div>
         <img src="assets/profile.png" alt="Harison Mandaniaina" class="hero-profile-img" fetchpriority="high"
           decoding="async">
       </div>
@@ -524,7 +530,7 @@
         <!-- Project 1: Cartographie & Cartes Thématiques -->
         <div class="portfolio-item glass-card item-sig" data-category="sig">
           <div class="portfolio-img">
-            <img src="assets/carte-lithologique.png" alt="Cartographie & Carte Lithologique" class="portfolio-item-img" loading="lazy" decoding="async">
+            <img src="assets/carte-lithologique.jpg" alt="Cartographie & Carte Lithologique" class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
             <h3>Cartographie & Cartes Thématiques</h3>
@@ -541,7 +547,7 @@
         <!-- Project 2: SIG & Télédétection Spatiale -->
         <div class="portfolio-item glass-card item-sig" data-category="sig">
           <div class="portfolio-img">
-            <img src="assets/teledetection-sig.png" alt="SIG et Télédétection Spatiale" class="portfolio-item-img" loading="lazy" decoding="async">
+            <img src="assets/teledetection-sig.jpg" alt="SIG et Télédétection Spatiale" class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
             <h3>SIG & Télédétection Spatiale</h3>
@@ -558,7 +564,7 @@
         <!-- Project 3: Analyse Spatiale & Numérisation -->
         <div class="portfolio-item glass-card item-sig" data-category="sig">
           <div class="portfolio-img">
-            <img src="assets/analyse-spatiale.png" alt="Analyse Spatiale & Numérisation Terrain"
+            <img src="assets/analyse-spatiale.jpg" alt="Analyse Spatiale & Numérisation Terrain"
               class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
@@ -576,7 +582,7 @@
         <!-- Project 4: Création de Logo (Brand Identity) -->
         <div class="portfolio-item glass-card item-design" data-category="design">
           <div class="portfolio-img">
-            <img src="assets/logo-branding.png" alt="Création de Logo ingenieur" class="portfolio-item-img" loading="lazy" decoding="async">
+            <img src="assets/logo-branding.jpg" alt="Création de Logo ingenieur" class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
             <h3>Création de Logo & Branding</h3>
@@ -593,7 +599,7 @@
         <!-- Project 5: Affiches Publicitaires -->
         <div class="portfolio-item glass-card item-design" data-category="design">
           <div class="portfolio-img">
-            <img src="assets/affiche-publicitaire.png" alt="Affiches Publicitaires & Visuels"
+            <img src="assets/affiche-publicitaire.jpg" alt="Affiches Publicitaires & Visuels"
               class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
@@ -611,7 +617,7 @@
         <!-- Project 6: Cartes de Visite -->
         <div class="portfolio-item glass-card item-design" data-category="design">
           <div class="portfolio-img">
-            <img src="assets/carte-visite.png" alt="Cartes de Visite Professionnelles" class="portfolio-item-img" loading="lazy" decoding="async">
+            <img src="assets/carte-visite.jpg" alt="Cartes de Visite Professionnelles" class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
             <h3>Cartes de Visite Élégantes</h3>
@@ -628,7 +634,7 @@
         <!-- Project 7: Design T-Shirt -->
         <div class="portfolio-item glass-card item-design" data-category="design">
           <div class="portfolio-img">
-            <img src="assets/tshirt-design.png" alt="Design T-shirt & Textile" class="portfolio-item-img" loading="lazy" decoding="async">
+            <img src="assets/tshirt-design.jpg" alt="Design T-shirt & Textile" class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
             <h3>Design T-Shirt & Textile</h3>
@@ -645,7 +651,7 @@
         <!-- Project 8: Présentations PowerPoint -->
         <div class="portfolio-item glass-card item-ppt" data-category="ppt">
           <div class="portfolio-img">
-            <img src="assets/presentation-powerpoint.png" alt="Présentations PowerPoint Professionnelles"
+            <img src="assets/presentation-powerpoint.jpg" alt="Présentations PowerPoint Professionnelles"
               class="portfolio-item-img" loading="lazy" decoding="async">
           </div>
           <div class="portfolio-info">
@@ -788,7 +794,7 @@
   <footer class="footer">
     <div class="container footer-container">
       <div class="footer-copy">
-        &copy; 2026 Harison Mandaniaina. Tous droits réservés.
+        &copy; <span id="footer-year">2026</span> Harison Mandaniaina. Tous droits réservés.
       </div>
       <div class="footer-socials">
         <a href="mailto:ainaandriam8@gmail.com" class="footer-social-link" title="E-mail" aria-label="E-mail"

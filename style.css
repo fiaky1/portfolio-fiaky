@@ -469,7 +469,7 @@ li {
 /* Right Column: Profile with circles */
 .hero-content-right {
   position: relative;
-  height: 620px;
+  height: clamp(440px, 72vh, 860px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -478,7 +478,9 @@ li {
 .hero-profile-img {
   position: relative;
   z-index: 10;
-  max-height: 600px;
+  max-height: 92%;
+  max-width: 100%;
+  height: auto;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 20px 45px rgba(0,0,0,0.6));
@@ -489,6 +491,14 @@ li {
 .hero-profile-img:hover {
   transform: translateY(-5px) scale(1.03) rotate(0.5deg);
   filter: drop-shadow(0 25px 50px rgba(127, 86, 218, 0.45));
+}
+
+/* Parallax wrapper for the decorative shapes */
+.hero-shapes-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Large red/coral circle behind profile */
@@ -1322,7 +1332,9 @@ li {
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-bottom: 1.2rem;
-  height: 60px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
@@ -1851,12 +1863,12 @@ textarea ~ .form-label {
     justify-content: center;
   }
   
-  .hero-content-right {
-    height: 420px;
+.hero-content-right {
+    height: clamp(300px, 52vh, 440px);
   }
-  
+
   .hero-profile-img {
-    max-height: 380px;
+    max-height: 92%;
   }
   
   .value-props-grid,
@@ -2010,12 +2022,12 @@ textarea ~ .form-label {
     gap: 0.75rem;
   }
   
-  .hero-content-right {
-    height: auto;
+.hero-content-right {
+    height: clamp(260px, 48vh, 340px);
   }
-  
+
   .hero-profile-img {
-    max-height: 300px;
+    max-height: 92%;
   }
   
   .portfolio-filters {
@@ -2319,6 +2331,10 @@ html[data-theme="light"] .form-input {
 
 html[data-theme="light"] .form-input:focus {
   background: rgba(212, 163, 115, 0.05);
+}
+
+html[data-theme="light"] .form-label {
+  background: #ffffff;
 }
 
 html[data-theme="light"] .form-input:focus ~ .form-label,
