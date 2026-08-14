@@ -13,6 +13,17 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Apply saved theme before render to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('portfolio-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 <body>
@@ -42,13 +53,22 @@
         <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
       </ul>
 
-      <a href="#about" class="nav-pill-btn" id="nav-pill-btn">À propos</a>
+      <div class="nav-actions">
+        <a href="#about" class="nav-pill-btn" id="nav-pill-btn">À propos</a>
 
-      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu principal" aria-controls="nav-menu" aria-expanded="false">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Basculer le mode clair/sombre"
+          title="Basculer le mode clair/sombre">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu principal" aria-controls="nav-menu"
+          aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </button>
+        </button>
+      </div>
     </div>
   </nav>
 

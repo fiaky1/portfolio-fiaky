@@ -33,8 +33,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================
+     1b. THEME TOGGLE (Light / Dark)
+      ========================================== */
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeRoot = document.documentElement;
+
+  function applyTheme(theme) {
+    themeRoot.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+    } catch (e) {}
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = themeRoot.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      applyTheme(current);
+    });
+  }
+
+  /* ==========================================
      2. NAVBAR SCROLL EFFECT
-     ========================================== */
+      ========================================== */
   const navbar = document.getElementById('navbar');
   
   window.addEventListener('scroll', () => {
